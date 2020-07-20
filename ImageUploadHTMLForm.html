@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" CONTENT="no-cache">
+    <meta http-equiv="Expires" CONTENT="0">
+
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+		
+		
+    <meta charset="UTF-8">
+	
+	
+    <title>File Upload</title>
+	
+	
+		
+		
+</head>
+<body>
+
+    
+    
+    
+    
+    
+    <form name ="myform" method="post" enctype="multipart/form-data">
+        Upload a File:
+        <input type="file" name="the_file"  onchange='openFile(event)'><br>
+        <img id='output' style="height:100px; width:100px;"><br>
+        <input type="submit" name="submit" value="Start Upload">
+    </form>
+	
+    
+
+		<script type="text/javascript">
+                    
+                    
+                    
+
+
+                var openFile = function(file) {
+                    var input = file.target;
+
+                    var reader = new FileReader();
+                    
+                    reader.onloadend  = function(){
+                      var dataURL = reader.result;
+                      var output = document.getElementById('output');
+                      
+                    output.src = dataURL;
+                      
+                };
+                reader.readAsDataURL(input.files[0]);
+                    };
+    
+    </script>
+    
+		
+</body>
+
+
+</html>
+
+
